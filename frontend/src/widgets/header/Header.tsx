@@ -1,11 +1,19 @@
 import { Bell, Search } from 'lucide-react';
 
-export function Header() {
+interface HeaderProps {
+  eyebrow?: string;
+  title?: string;
+}
+
+export function Header({
+  eyebrow = 'Document Generator',
+  title = 'Contracts workspace',
+}: HeaderProps) {
   return (
     <header className="header">
       <div>
-        <p className="eyebrow">Document Generator</p>
-        <h1>Contracts workspace</h1>
+        <p className="eyebrow">{eyebrow}</p>
+        <h1>{title}</h1>
       </div>
       <div className="headerActions">
         <button className="iconButton" aria-label="Search">

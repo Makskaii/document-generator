@@ -1,11 +1,13 @@
+import Link from 'next/link';
 import { FileText, Folder, LayoutDashboard, Settings, Users } from 'lucide-react';
 
 const items = [
-  { label: 'Dashboard', icon: LayoutDashboard },
-  { label: 'Clients', icon: Users },
-  { label: 'Contracts', icon: FileText },
-  { label: 'Templates', icon: Folder },
-  { label: 'Settings', icon: Settings },
+  { label: 'Dashboard', href: '/', icon: LayoutDashboard },
+  { label: 'Clients', href: '/', icon: Users },
+  { label: 'Contracts', href: '/contracts', icon: FileText },
+  { label: 'Templates', href: '/templates', icon: Folder },
+  { label: 'Generated', href: '/generated', icon: Folder },
+  { label: 'Settings', href: '/', icon: Settings },
 ];
 
 export function Sidebar() {
@@ -17,10 +19,10 @@ export function Sidebar() {
           const Icon = item.icon;
 
           return (
-            <button key={item.label} className="navItem">
+            <Link key={item.label} className="navItem" href={item.href}>
               <Icon size={18} />
               <span>{item.label}</span>
-            </button>
+            </Link>
           );
         })}
       </nav>

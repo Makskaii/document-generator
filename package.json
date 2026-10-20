@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "docxtemplater": "^3.68.7",
+    "exceljs": "^4.4.0",
+    "pizzip": "^3.2.0"
+  },
+  "devDependencies": {
+    "@types/multer": "^2.1.0"
+  }
+}
